@@ -4,4 +4,34 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <filter>
+  	<filter-name>CustomerRegisterFilter</filter-name>
+  	<display-name>CustomerRegisterFilter</display-name>
+  	<description></description>
+  	<filter-class>com.ay.filter.CustomerRegisterFilter</filter-class>
+  </filter>
+  <filter>
+  	<filter-name>CustomerLoginFilter</filter-name>
+  	<display-name>CustomerLoginFilter</display-name>
+  	<description></description>
+  	<filter-class>com.ay.filter.CustomerLoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  	<filter-name>CustomerRegisterFilter</filter-name>
+  	<url-pattern>/cReg</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+  	<filter-name>CustomerLoginFilter</filter-name>
+  	<url-pattern>/cLogin</url-pattern>
+  </filter-mapping>
+  <servlet>
+  	<servlet-name>CustomerRegisterServlet</servlet-name>
+  	<display-name>CustomerRegisterServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.ay.servlets.CustomerRegisterServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>CustomerRegisterServlet</servlet-name>
+  	<url-pattern>/cReg</url-pattern>
+  </servlet-mapping>
 </web-app>
