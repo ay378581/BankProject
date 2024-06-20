@@ -1,6 +1,7 @@
 package com.ay.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,27 +15,18 @@ public class CustomerRegisterServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		CustomerBean cb = new CustomerBean();
-		cb.setAccNo(Long.parseLong(req.getParameter("accNo")));
-		/*
-		 * 
-		 * 
-		 * 
-		 * 
-		 * Complete My Team Member
-		 * 
-		 * 
-		 * 
-		 * 
-		 */
+		CustomerBean cb = (CustomerBean) req.getAttribute("bean");
+
+		System.out.println("Servlet");
+
 		int k = new CustomerRegisterDAO().register(cb);
 		if (k > 0)
 			req.setAttribute("msg", "Register Successfully");
 		else
 			req.setAttribute("msg", "Failed To Register");
 
-		req.getRequestDispatcher("index.html").include(req, res);
-
+		System.out.println("Servlet After DAO");
+		req.getRequestDispatcher("index.jsp").include(req, res);
 	}
 
 }
