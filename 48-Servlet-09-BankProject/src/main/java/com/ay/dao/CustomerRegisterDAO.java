@@ -2,6 +2,7 @@ package com.ay.dao;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import com.ay.bean.CustomerBean;
 import com.ay.connection.DBConnection;
@@ -13,6 +14,8 @@ public class CustomerRegisterDAO {
 		try {
 			Connection con = DBConnection.getConnection();
 			CallableStatement cs = con.prepareCall("{call Register(?,?,?,?,?,?,?,?,?,?,?,?)}");
+			PreparedStatement ps = con.prepareStatement("INSERT INTO CUSTAUTH VALUES(?,?,?)");
+
 			cs.setLong(1, cb.getAccNo());
 			cs.setInt(2, cb.getCustId());
 			cs.setString(3, cb.getCustName());
@@ -26,9 +29,17 @@ public class CustomerRegisterDAO {
 			cs.setString(11, cb.getMid());
 			cs.setLong(12, cb.getPhone());
 
-			if (cs.execute())
-				k = 1;
+			ps.setLong(1, cb.getAccNo());
+			ps.setString(2, cb.getMid());
+			ps.setString(3, cb.getPass());
 
+			int q = ps.executeUpdate();
+
+			if (q > 1) {
+				cs.execute();
+				k = 1;
+			}
+			
 		} catch (Exception e) {
 			System.err.println("Customer Register Related Problem");
 			e.printStackTrace();

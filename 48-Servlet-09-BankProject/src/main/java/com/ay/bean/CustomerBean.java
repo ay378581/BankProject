@@ -5,12 +5,20 @@ import java.io.Serializable;
 public class CustomerBean implements Serializable {
 
 	private Long accNo, phone;
-	private String custName, accType, cty, state, hNo, mid, sname;
+	private String custName, accType, cty, state, hNo, mid, sname, pass;
 	private Integer custId, pin;
 	private Float bal;
 
 	public Long getAccNo() {
 		return accNo;
+	}
+
+	public String getPass() {
+		return pass;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
 	public void setAccNo(Long accNo) {

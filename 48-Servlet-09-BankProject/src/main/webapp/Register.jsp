@@ -54,12 +54,16 @@
 				<td><input type="text" name="mid"></td>
 			</tr>
 			<tr>
+				<td>Password : </td>
+				<td><input type="password" name="pass"></td>
+			</tr>
+			<tr>
 				<td>Phone No :</td>
 				<td><input type="text" name="phone"></td>
 			</tr>
 			<tr>
-				<td></td>
-				<td><input type="submit">Register</td>
+				<td><input type="submit"></td>
+				<td><input type="reset"></td>
 			</tr>
 		</table>
 	</form>
