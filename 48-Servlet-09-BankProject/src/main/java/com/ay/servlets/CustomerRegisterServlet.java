@@ -28,6 +28,7 @@ public class CustomerRegisterServlet extends HttpServlet {
 		System.out.println("Servlet After DAO");
 		System.out.println("Ashwaryan sharma");
 		System.out.println("Ashwaryan sharma - 2");
+		System.out.println("Shikhar");
 		
 		req.getRequestDispatcher("index.jsp").include(req, res);
 	}
