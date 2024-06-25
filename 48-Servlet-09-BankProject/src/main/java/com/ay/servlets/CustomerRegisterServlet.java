@@ -29,6 +29,7 @@ public class CustomerRegisterServlet extends HttpServlet {
 		System.out.println("Ashwaryan sharma");
 		System.out.println("Ashwaryan sharma - 2");
 		System.out.println("Shikhar");
+		System.out.println("Cammand");
 		
 		req.getRequestDispatcher("index.jsp").include(req, res);
 	}
