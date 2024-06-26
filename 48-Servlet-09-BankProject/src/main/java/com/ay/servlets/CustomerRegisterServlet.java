@@ -20,12 +20,14 @@ public class CustomerRegisterServlet extends HttpServlet {
 		System.out.println("Servlet");
 
 		int k = new CustomerRegisterDAO().register(cb);
-		if (k > 0)
+		if (k > 0) {
 			req.setAttribute("msg", "Register Successfully");
-		else
+			req.getRequestDispatcher("Login.jsp").include(req, res);
+		} else {
+
 			req.setAttribute("msg", "Failed To Register");
-		
-		req.getRequestDispatcher("index.jsp").include(req, res);
+			req.getRequestDispatcher("index.jsp").include(req, res);
+		}
 	}
 
 }

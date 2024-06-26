@@ -30,8 +30,18 @@
   	<description></description>
   	<servlet-class>com.ay.servlets.CustomerRegisterServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CustomerLoginServlet</servlet-name>
+  	<display-name>CustomerLoginServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.ay.servlets.CustomerLoginServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CustomerRegisterServlet</servlet-name>
   	<url-pattern>/cReg</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CustomerLoginServlet</servlet-name>
+  	<url-pattern>/cLogin</url-pattern>
   </servlet-mapping>
 </web-app>
