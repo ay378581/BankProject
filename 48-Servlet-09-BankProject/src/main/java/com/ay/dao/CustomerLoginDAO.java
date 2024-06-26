@@ -13,14 +13,16 @@ import com.ay.connection.DBConnection;
 
 public class CustomerLoginDAO {
 
-	public Long getAccNo(ServletRequest req) {
+	public Long getAccNo(String uname , String pword) {
 
 		Long accNo = null;
 
 		try {
 			Connection con = DBConnection.getConnection();
 			PreparedStatement ps = con.prepareStatement("SELECT * FROM CUSTAUTH WHERE username = ? and password = ? ");
-
+			ps.setString(1, uname);
+			ps.setString(2, pword);
+			
 			ResultSet rs = ps.executeQuery();
 			if (rs.next())
 				accNo = rs.getLong(1);
@@ -54,7 +56,9 @@ public class CustomerLoginDAO {
 			cs.execute();
 			
 			cb = new CustomerBean();
+//			****************** Complete this process ******************
 			
+			cb.setCustName(cs.getString(3));
 
 		} catch (Exception e) {
 			e.printStackTrace();

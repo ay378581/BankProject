@@ -34,12 +34,9 @@ public class CustomerRegisterDAO {
 			ps.setString(3, cb.getPass());
 
 			int q = ps.executeUpdate();
+			cs.execute();
+			k = 1;
 
-			if (q > 1) {
-				cs.execute();
-				k = 1;
-			}
-			
 		} catch (Exception e) {
 			System.err.println("Customer Register Related Problem");
 			e.printStackTrace();

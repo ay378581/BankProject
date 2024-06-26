@@ -327,16 +327,16 @@
 -->
 							<div class="col-md-6">
 								<div class="form-floating">
-									<input type="email" class="form-control bg-white border-0"
-										id="email" placeholder="Your Email"> <label
+									<input type="text" class="form-control bg-white border-0"
+										id="email" placeholder="Your Email" name="uname"> <label
 										for="email">Your Email</label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-floating">
-									<input type="text" class="form-control bg-white border-0"
+									<input type="password" class="form-control bg-white border-0"
 										id="password" placeholder="Your Name"> <label
-										for="name">Password</label>
+										for="name" name="pword">Password</label>
 								</div>
 							</div>
 <!--  							<div class="col-md-6">

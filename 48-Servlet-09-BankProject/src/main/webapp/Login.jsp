@@ -9,8 +9,8 @@
 <body>
 	<form action="cLogin" method="post">
 		Enter Username : <input type="text" name="uname"><br>
-		Enter Username : <input type="password" name="pword"><br> 
-		<input type="submit"><br>
+		Enter Password : <input type="password" name="pword"><br> 
+		<input type="submit">
 	</form>
 </body>
 </html>
