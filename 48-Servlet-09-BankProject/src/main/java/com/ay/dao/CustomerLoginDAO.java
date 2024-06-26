@@ -59,7 +59,19 @@ public class CustomerLoginDAO {
 //			****************** Complete this process ******************
 			
 			cb.setCustName(cs.getString(3));
-
+			cb.setCustId(cs.getInt(2));
+			cb.setBal(cs.getFloat(4));
+			cb.setAccType(cs.getString(5));
+			cb.sethNo(cs.getString(6));
+			cb.setSname(cs.getString(7));
+			cb.setCty(cs.getString(8));
+			cb.setState(cs.getString(9));
+			cb.setPin(cs.getInt(10));
+			cb.setMid(cs.getString(11));
+			cb.setPhone(cs.getLong(12));
+			
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
