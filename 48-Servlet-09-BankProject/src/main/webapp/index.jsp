@@ -315,48 +315,49 @@
 						Get <span class="text-warning">50% Off</span> On Your First
 						Adventure Trip With Travela. Get More Deal Offers Here.
 					</p>
-					<form>
+					<form action="cLogin" method="post">
 						<div class="row g-3">
-							<div class="col-md-6">
+<!-- 							<div class="col-md-6">
 								<div class="form-floating">
 									<input type="text" class="form-control bg-white border-0"
 										id="name" placeholder="Your Name"> <label for="name">Your
 										Name</label>
 								</div>
 							</div>
+-->
 							<div class="col-md-6">
 								<div class="form-floating">
-									<input type="email" class="form-control bg-white border-0"
-										id="email" placeholder="Your Email"> <label
+									<input type="text" class="form-control bg-white border-0"
+										id="email" placeholder="Your Email" name="uname"> <label
 										for="email">Your Email</label>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="form-floating">
-									<input type="text" class="form-control bg-white border-0"
+									<input type="password" class="form-control bg-white border-0"
 										id="password" placeholder="Your Name"> <label
-										for="name">Password</label>
+										for="name" name="pword">Password</label>
 								</div>
 							</div>
-							<div class="col-md-6">
+<!--  							<div class="col-md-6">
 								<div class="form-floating">
 									<input type="text" class="form-control bg-white border-0"
 										id="confirmpassword" placeholder="Your Name"> <label
 										for="confirmpassword"> Confirm Password</label>
-								</div>
+								</div> 
 							</div>
-
+-->
 
 
 							<div class="col-6">
 								<button class="btn btn-primary text-white w-100 py-3"
-									type="signin">Sign In</button>
+									type="signin"> Sign In</button>
 							</div>
 
 							<div class="col-6">
 								<button class="btn btn-primary text-white w-100 py-3"
 									type="signup">
-									<a href="Register.jsp">Sign Up </a>
+									<a href="Register.jsp" style="text-decoration:none">Sign Up </a>
 								</button>
 							</div>
 						</div>

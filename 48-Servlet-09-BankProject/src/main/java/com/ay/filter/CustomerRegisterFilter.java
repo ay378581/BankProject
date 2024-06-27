@@ -25,13 +25,14 @@ public class CustomerRegisterFilter extends HttpFilter {
 		cb.setCustId(Integer.parseInt(req.getParameter("cid")));
 		cb.setBal(Float.parseFloat(req.getParameter("bal")));
 		cb.sethNo(req.getParameter("hno"));
-		cb.setSname(req.getParameter("sname"));
+		cb.setSname(req.getParameter("sn"));
 		cb.setCty(req.getParameter("cty"));
-		cb.setState(req.getParameter("state"));
+		cb.setState(req.getParameter("st"));
 		cb.setPin(Integer.parseInt(req.getParameter("pin")));
 		cb.setMid(req.getParameter("mid"));
 		cb.setPhone(Long.parseLong(req.getParameter("phone")));
-
+		cb.setPass(req.getParameter("pass"));
+		
 		System.out.println("Filter");
 		
 		req.setAttribute("bean", cb);

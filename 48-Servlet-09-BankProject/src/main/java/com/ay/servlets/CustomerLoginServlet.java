@@ -6,28 +6,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.ay.bean.CustomerBean;
-import com.ay.dao.CustomerRegisterDAO;
 
-public class CustomerRegisterServlet extends HttpServlet {
+public class CustomerLoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
+		HttpSession hs = req.getSession();
 		CustomerBean cb = (CustomerBean) req.getAttribute("bean");
-
-		System.out.println("Servlet");
-
-		int k = new CustomerRegisterDAO().register(cb);
-		if (k > 0) {
-			req.setAttribute("msg", "Register Successfully");
-			req.getRequestDispatcher("Login.jsp").include(req, res);
-		} else {
-
-			req.setAttribute("msg", "Failed To Register");
-			req.getRequestDispatcher("index.jsp").include(req, res);
-		}
+		hs.setAttribute("bean", cb);
+		req.getRequestDispatcher("Welcome.jsp").include(req, res);
 	}
-
 }
