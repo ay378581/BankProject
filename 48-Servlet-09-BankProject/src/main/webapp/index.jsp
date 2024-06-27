@@ -351,14 +351,15 @@
 
 							<div class="col-6">
 								<button class="btn btn-primary text-white w-100 py-3"
-									type="signin">Sign In</button>
+									type="signin">
+									<a href="SignIn.jsp" style="text-decoration: none">Sign In</a>
+									</button>
 							</div>
 
 							<div class="col-6">
 								<button class="btn btn-primary text-white w-100 py-3"
 									type="signup">
-									<a href="Register.jsp" style="text-decoration: none">Sign
-										Up </a>
+									<a href="Register.jsp" style="text-decoration: none">SignUp </a>
 								</button>
 							</div>
 						</div>

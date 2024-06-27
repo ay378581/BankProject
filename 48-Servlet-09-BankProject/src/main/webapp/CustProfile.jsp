@@ -27,36 +27,36 @@
 				<td><%=cb.getCustId()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer Account Type :</td>
+				<td><%=cb.getAccType()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer House Name :</td>
+				<td><%=cb.gethNo()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer Street Name :</td>
+				<td><%=cb.getSname()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer City Name :</td>
+				<td><%=cb.getCty()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer State Name :</td>
+				<td><%=cb.getState()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer PinCode :</td>
+				<td><%=cb.getPin()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer Main ID :</td>
+				<td><%=cb.getMid()%></td>
 			</tr>
 			<tr>
-				<td>Customer Name :</td>
-				<td><%=cb.getCustName()%></td>
+				<td>Customer Phone Number :</td>
+				<td><%=cb.getPhone()%></td>
 			</tr>
 		</table>
 		
