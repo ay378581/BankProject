@@ -317,7 +317,7 @@
 					</p>
 					<form action="cLogin" method="post">
 						<div class="row g-3">
-<!-- 							<div class="col-md-6">
+							<!-- 							<div class="col-md-6">
 								<div class="form-floating">
 									<input type="text" class="form-control bg-white border-0"
 										id="name" placeholder="Your Name"> <label for="name">Your
@@ -335,11 +335,11 @@
 							<div class="col-md-6">
 								<div class="form-floating">
 									<input type="password" class="form-control bg-white border-0"
-										id="password" placeholder="Your Name"> <label
+										id="password" placeholder="Password"> <label
 										for="name" name="pword">Password</label>
 								</div>
 							</div>
-<!--  							<div class="col-md-6">
+							<!--  							<div class="col-md-6">
 								<div class="form-floating">
 									<input type="text" class="form-control bg-white border-0"
 										id="confirmpassword" placeholder="Your Name"> <label
@@ -351,13 +351,14 @@
 
 							<div class="col-6">
 								<button class="btn btn-primary text-white w-100 py-3"
-									type="signin"> Sign In</button>
+									type="signin">Sign In</button>
 							</div>
 
 							<div class="col-6">
 								<button class="btn btn-primary text-white w-100 py-3"
 									type="signup">
-									<a href="Register.jsp" style="text-decoration:none">Sign Up </a>
+									<a href="Register.jsp" style="text-decoration: none">Sign
+										Up </a>
 								</button>
 							</div>
 						</div>
