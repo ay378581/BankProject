@@ -18,7 +18,7 @@
 		hs.invalidate();
 		request.setAttribute("msg", "Logout Successfully");
 	}
-	request.getRequestDispatcher("Login.jsp").include(request, response);
+	request.getRequestDispatcher("SignIn.jsp").include(request, response);
 	%>
 </body>
 </html>

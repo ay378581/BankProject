@@ -1,0 +1,195 @@
+@charset "UTF-8";
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .navbar {
+            background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+            overflow: hidden;
+            color: #fff;
+            padding: 10px 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo {
+            float: left;
+            padding: 10px 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .navbar .menu {
+            float: left;
+            margin-left: 20px;
+        }
+        .navbar .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .navbar .menu ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        .navbar .menu ul li a {
+            color: #fff;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .navbar .menu ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 4px;
+        }
+        .navbar .search {
+            float: right;
+            padding: 10px 20px;
+        }
+        .navbar .search input[type="search"] {
+            padding: 5px 10px;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            transition: box-shadow 0.3s;
+        }
+        .navbar .search input[type="search"]:focus {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .navbar .search .btn {
+            background-color: #00c6ff;
+            color: #fff;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .navbar .search .btn:hover {
+            background-color: #009ec3;
+        }
+        .navbar .search .btn:active {
+            transform: scale(0.95);
+        }
+        .user-info {
+            float: right;
+            padding: 10px 20px;
+        }
+        .logout-btn {
+            background-color: #ff5c5c;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .logout-btn:hover {
+            background-color: #ff3333;
+            transform: scale(1.1);
+        }
+        .logout-btn:active {
+            transform: scale(0.9);
+        }
+        .content {
+            padding: 20px;
+            text-align: center;
+        }
+        .content h1 {
+            color: #333;
+            font-size: 36px;
+            margin-bottom: 10px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        .content span {
+            color: #007BFF;
+        }
+        .functions {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .functions .card {
+            background-color: #fff;
+            margin: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
+            max-width: 300px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .functions .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+        .functions .card h3 {
+            color: #007BFF;
+            animation: fadeInDown 1s ease-in-out;
+        }
+        .functions .card p {
+            color: #333;
+        }
+        .functions .card .btnn {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .functions .card .btnn:hover {
+            background-color: #0056b3;
+            transform: scale(1.1);
+        }
+        .functions .card .btnn:active {
+            transform: scale(0.95);
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+        footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        footer ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        footer ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: text-decoration 0.3s, color 0.3s;
+        }
+        footer ul li a:hover {
+            text-decoration: underline;
+            color: #ccc;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
