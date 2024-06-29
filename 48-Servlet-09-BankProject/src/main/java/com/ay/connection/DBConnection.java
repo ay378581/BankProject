@@ -7,8 +7,8 @@ public class DBConnection {
 
 	private static final String driver_ClassName = "oracle.jdbc.driver.OracleDriver";
 	private static final String url = "jdbc:oracle:thin:@localhost:1521:orcl";
-	private static final String username = "c##aakash";
-	private static final String password = "aakash";
+	private static final String username = "system";
+	private static final String password = "shikhar";
 
 	public static Connection getConnection() {
 		Connection con = null;
