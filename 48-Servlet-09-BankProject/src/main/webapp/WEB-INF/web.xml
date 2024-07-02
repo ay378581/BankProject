@@ -16,12 +16,7 @@
   	<description></description>
   	<filter-class>com.ay.filter.CustomerLoginFilter</filter-class>
   </filter>
-  <filter>
-  	<filter-name>TransactionHistoryFilter</filter-name>
-  	<display-name>TransactionHistoryFilter</display-name>
-  	<description></description>
-  	<filter-class>com.ay.filter.TransactionHistoryFilter</filter-class>
-  </filter>
+  
   <filter-mapping>
   	<filter-name>CustomerRegisterFilter</filter-name>
   	<url-pattern>/cReg</url-pattern>
@@ -29,10 +24,6 @@
   <filter-mapping>
   	<filter-name>CustomerLoginFilter</filter-name>
   	<url-pattern>/cLogin</url-pattern>
-  </filter-mapping>
-  <filter-mapping>
-  	<filter-name>TransactionHistoryFilter</filter-name>
-  	<url-pattern>/TxHis</url-pattern>
   </filter-mapping>
   <servlet>
   	<servlet-name>CustomerRegisterServlet</servlet-name>

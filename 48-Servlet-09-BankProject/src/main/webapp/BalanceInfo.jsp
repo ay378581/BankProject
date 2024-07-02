@@ -13,7 +13,7 @@
     CustomerBean cb = (CustomerBean) hs.getAttribute("bean");
     if (cb == null) {
         request.setAttribute("msg", "Session Expired");
-        request.getRequestDispatcher("index.jsp").include(request, response);
+        request.getRequestDispatcher("SignIn.jsp").include(request, response);
     } else {
     %>
     <div class="balance-container">

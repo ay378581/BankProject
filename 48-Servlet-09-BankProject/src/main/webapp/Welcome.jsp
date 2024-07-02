@@ -37,7 +37,7 @@
             CustomerBean cb = (CustomerBean) hs.getAttribute("bean");
             if (cb == null) {
                 request.setAttribute("msg", "Session Expired");
-                request.getRequestDispatcher("index.jsp").include(request, response);
+                request.getRequestDispatcher("SignIn.jsp").include(request, response);
             } else {
                 out.println("<h1>Welcome to <br /> <span>Banking</span> <br />Dashboard</h1>");
                 out.println("<h2>Hello, " + cb.getCustName() + "!</h2>");
@@ -63,7 +63,7 @@
         <div class="card">
             <h3>Transaction History</h3>
             <p>Review your past transactions.</p>
-            <a href="TranHistory.jsp"><button class="btnn">View</button></a>
+            <a href="TxHis"><button class="btnn">View</button></a>
         </div>
         <div class="card">
             <h3>Edit Profile</h3>

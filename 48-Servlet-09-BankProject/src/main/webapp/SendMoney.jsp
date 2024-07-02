@@ -15,17 +15,17 @@
         CustomerBean cb = (CustomerBean) hs.getAttribute("bean");
         if (cb == null) {
             request.setAttribute("msg", "Session Expired");
-            request.getRequestDispatcher("index.jsp").include(request, response);
+            request.getRequestDispatcher("SignIn.jsp").include(request, response);
         } else {
             out.println("<h2>Welcome: " + cb.getCustName() + "</h2>");
             
-            String msg = (String) request.getParameter("msg");
+/*             String msg = (String) request.getParameter("msg");
             if (msg != null) {
                 out.print("<p>" + msg + "</p>");
-            }
+            } */
         %>
         <form action="sendMoney" method="post">
-            <input type="hidden" name="sender" value="<%= cb.getAccNo() %>">
+            <input type="text" name="sender" value="<%= cb.getAccNo() %>">
             <div class="form-group">
                 <input type="text" name="rec" placeholder="Enter Receiver Account Number" required>
             </div>

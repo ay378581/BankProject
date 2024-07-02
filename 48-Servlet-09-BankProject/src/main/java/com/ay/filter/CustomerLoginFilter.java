@@ -26,6 +26,7 @@ public class CustomerLoginFilter extends HttpFilter {
 			req.getRequestDispatcher("SignIn.jsp").include(req, res);
 		} else {
 			CustomerBean cb = new CustomerLoginDAO().getAllInformation(accNo);
+			cb.setAccNo(accNo);
 			req.setAttribute("bean", cb);
 		}
 		chain.doFilter(req, res);

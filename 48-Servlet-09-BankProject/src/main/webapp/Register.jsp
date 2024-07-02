@@ -1,13 +1,61 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
 </head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1em;
+}
+
+label {
+    display: block;
+    margin-top: 1em;
+}
+
+input {
+    width: 100%;
+    padding: 0.5em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
+    border-radius: 0.5em;
+}
+
+button {
+    padding: 0.7em;
+    border: none;
+    border-radius: 0.5em;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+    margin-right: 1em;
+}
+
+button[type="reset"] {
+    background: #f44336;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+</style>
 <body>
-	<form action="cReg" method="post">
+
+    <form action="cReg" method="post">
 		<table>
 			<tr>
 				<td>Customer Name :</td>
@@ -67,5 +115,6 @@
 			</tr>
 		</table>
 	</form>
+
 </body>
 </html>

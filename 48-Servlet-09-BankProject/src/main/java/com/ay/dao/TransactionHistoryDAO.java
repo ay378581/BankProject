@@ -12,7 +12,7 @@ public class TransactionHistoryDAO {
 
 	public ArrayList<TransactionBean> sendingHistory(long accNo) {
 		ArrayList<TransactionBean> sal = new ArrayList<>();
-		String query = "SELECT * FROM transaction_history WHERE sender_accNo = ?";
+		String query = "SELECT * FROM TRANSACTION_HISTORY WHERE SENDERACCOUNTNUMBER = ?";
 
 		try {
 			Connection con = DBConnection.getConnection();
@@ -24,14 +24,13 @@ public class TransactionHistoryDAO {
 			while (rs.next()) {
 				TransactionBean tb = new TransactionBean();
 				
-				tb.setId(rs.getInt("id"));
-				tb.setSenderName(rs.getString("sender_name"));
-				tb.setReceiverName(rs.getString("receiver_name"));
-				tb.setSenderAccNumber(rs.getString("sender_accNo"));
-				tb.setReceiverAccNumber(rs.getString("receiver_accNo"));
-				tb.setTransactionAmount(rs.getDouble("transaction_amount"));
-				tb.setTransactionDate(rs.getDate("transaction_date")); 
-
+				tb.setId(rs.getInt(1));
+				tb.setSenderName(rs.getString(3));
+				tb.setReceiverName(rs.getString(5));
+				tb.setSenderAccNumber(rs.getLong(2));
+				tb.setReceiverAccNumber(rs.getLong(4));
+				tb.setTransactionAmount(rs.getDouble(6));
+				tb.setTransactionDate(rs.getDate(7)); 
 				sal.add(tb);
 			}
 		} catch (SQLException e) {
@@ -55,13 +54,13 @@ public class TransactionHistoryDAO {
 			while (rs.next()) {
 				TransactionBean tb = new TransactionBean();
 				
-				tb.setId(rs.getInt("id"));
-				tb.setSenderName(rs.getString("sender_name"));
-				tb.setReceiverName(rs.getString("receiver_name"));
-				tb.setSenderAccNumber(rs.getString("sender_accNo"));
-				tb.setReceiverAccNumber(rs.getString("receiver_accNo"));
-				tb.setTransactionAmount(rs.getDouble("transaction_amount"));
-				tb.setTransactionDate(rs.getDate("transaction_date")); 
+				tb.setId(rs.getInt(1));
+				tb.setSenderName(rs.getString(3));
+				tb.setReceiverName(rs.getString(5));
+				tb.setSenderAccNumber(rs.getLong(2));
+				tb.setReceiverAccNumber(rs.getLong(4));
+				tb.setTransactionAmount(rs.getDouble(6));
+				tb.setTransactionDate(rs.getDate(7)); 
 				
 				ral.add(tb);
 			}
@@ -86,13 +85,13 @@ public class TransactionHistoryDAO {
 			while (rs.next()) {
 				TransactionBean tb = new TransactionBean();
 				
-				tb.setId(rs.getInt("id"));
-				tb.setSenderName(rs.getString("sender_name"));
-				tb.setReceiverName(rs.getString("receiver_name"));
-				tb.setSenderAccNumber(rs.getString("sender_accNo"));
-				tb.setReceiverAccNumber(rs.getString("receiver_accNo"));
-				tb.setTransactionAmount(rs.getDouble("transaction_amount"));
-				tb.setTransactionDate(rs.getDate("transaction_date")); 
+				tb.setId(rs.getInt(1));
+				tb.setSenderName(rs.getString(3));
+				tb.setReceiverName(rs.getString(5));
+				tb.setSenderAccNumber(rs.getLong(2));
+				tb.setReceiverAccNumber(rs.getLong(4));
+				tb.setTransactionAmount(rs.getDouble(6));
+				tb.setTransactionDate(rs.getDate(7)); 
 				
 				aal.add(tb);
 			}

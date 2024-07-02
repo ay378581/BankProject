@@ -21,7 +21,7 @@ public class SendMoneyServlet extends HttpServlet {
 			req = new SendMoneyDAO().send(req);
 			String msg = (String) req.getAttribute("msg");
 
-			if (msg.startsWith("Transaction Successfull")) {
+			if (msg.equals("Transaction Successfull")) {
 				float bal = cb.getBal();
 				bal = bal - Float.parseFloat(req.getParameter("amt"));
 				cb.setBal(bal);
