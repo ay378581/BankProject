@@ -7,10 +7,10 @@ public class TransactionBean implements Serializable {
 	private int id;
 	private String senderName;
 	private String receiverName;
-	private String senderAccNumber;
-	private String receiverAccNumber;
+	private Long senderAccNumber;
+	private Long receiverAccNumber;
 	private double transactionAmount;
-	private Date transactionDate; 
+	private Date transactionDate;
 
 	public int getId() {
 		return id;
@@ -44,19 +44,19 @@ public class TransactionBean implements Serializable {
 		this.receiverName = receiverName;
 	}
 
-	public String getSenderAccNumber() {
+	public Long getSenderAccNumber() {
 		return senderAccNumber;
 	}
 
-	public void setSenderAccNumber(String senderAccNumber) {
+	public void setSenderAccNumber(Long senderAccNumber) {
 		this.senderAccNumber = senderAccNumber;
 	}
 
-	public String getReceiverAccNumber() {
+	public Long getReceiverAccNumber() {
 		return receiverAccNumber;
 	}
 
-	public void setReceiverAccNumber(String receiverAccNumber) {
+	public void setReceiverAccNumber(Long receiverAccNumber) {
 		this.receiverAccNumber = receiverAccNumber;
 	}
 
@@ -66,6 +66,13 @@ public class TransactionBean implements Serializable {
 
 	public void setTransactionAmount(double transactionAmount) {
 		this.transactionAmount = transactionAmount;
+	}
+
+	@Override
+	public String toString() {
+		return "TransactionBean [id=" + id + ", senderName=" + senderName + ", receiverName=" + receiverName
+				+ ", senderAccNumber=" + senderAccNumber + ", receiverAccNumber=" + receiverAccNumber
+				+ ", transactionAmount=" + transactionAmount + ", transactionDate=" + transactionDate + "]";
 	}
 
 }

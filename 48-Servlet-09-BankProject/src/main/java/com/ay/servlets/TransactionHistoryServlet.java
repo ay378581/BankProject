@@ -6,22 +6,38 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.ay.bean.CustomerBean;
 import com.ay.bean.TransactionBean;
+import com.ay.dao.TransactionHistoryDAO;
 
 public class TransactionHistoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		ArrayList<TransactionBean> transactions = (ArrayList<TransactionBean>) req.getAttribute("transactions");
-
-		if (transactions == null) {
-			req.setAttribute("message", "No transactions found for the selected option.");
+		HttpSession hs = req.getSession(false);
+		CustomerBean cb = (CustomerBean) hs.getAttribute("bean");
+		if (cb == null) {
+			req.setAttribute("msg", "Session Expired");
+			req.getRequestDispatcher("SignIn.jsp").include(req, res);
 		} else {
-			req.setAttribute("transactions", transactions);
-		}
+			long accNo = cb.getAccNo();
+			TransactionHistoryDAO dao = new TransactionHistoryDAO();
+			ArrayList<TransactionBean> transactions = dao.sendingHistory(accNo);
 
-		req.getRequestDispatcher("TranHistory.jsp").include(req, res);
+			if (transactions.size() != 0) {
+				req.setAttribute("history", transactions);
+				System.out.println(transactions);
+				req.getRequestDispatcher("TranHistory.jsp").include(req, res);
+			} 
+			else {
+				req.setAttribute("msg", "No transactions found for the selected option.");
+				req.getRequestDispatcher("TranHistory.jsp").include(req, res);
+			}
+			
+
+		}
 	}
 }

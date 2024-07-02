@@ -26,7 +26,9 @@ public class CustomerLoginDAO {
 			ResultSet rs = ps.executeQuery();
 			if (rs.next())
 				accNo = rs.getLong(1);
-
+				
+			System.out.println(accNo);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

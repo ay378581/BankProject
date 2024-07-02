@@ -18,8 +18,8 @@ public class SendMoneyDAO {
 	private static final String TransactionHistory = "INSERT INTO transaction_history VALUES(TXNO.nextval,?,?,?,?,?,?) ";
 
 	public HttpServletRequest send(HttpServletRequest req) {
-		
-		try{
+
+		try {
 			Connection con = DBConnection.getConnection();
 
 			PreparedStatement ps1 = con.prepareStatement(checkUser);
@@ -30,7 +30,6 @@ public class SendMoneyDAO {
 
 			Savepoint sp = con.setSavepoint();
 
-			System.out.println("Enter Sender's Account Number : ");
 			long senderAccNo = Long.parseLong(req.getParameter("sender"));
 			ps1.setLong(1, senderAccNo);
 
@@ -38,8 +37,7 @@ public class SendMoneyDAO {
 			if (rs.next()) {
 				String sender = rs.getString(3);
 				Float bal = rs.getFloat(4);
-				
-				
+
 				long recAccNo = Long.parseLong(req.getParameter("rec"));
 				ps1.setLong(1, recAccNo);
 				ResultSet rs1 = ps1.executeQuery();
@@ -70,32 +68,32 @@ public class SendMoneyDAO {
 							ps3.setTimestamp(6, ts);
 
 							int tx = ps3.executeUpdate();
-							if (tx > 0) {
-								req.setAttribute("msg", "Transaction Successfull & History Updated");
-							} else
-								req.setAttribute("msg", "Transaction Successfull but History not updated");
-						
-							con.commit();
-						} else {
-							req.setAttribute("msg","Transaction Failed");
+							if (tx > 0) 
+							{
+								req.setAttribute("msg", "Transaction Successfull");
+								con.commit();
+							}
+						} 
+						else {
+							req.setAttribute("msg", "Transaction Failed");
 							con.rollback(sp);
 						}
 
 					} else {
-						req.setAttribute("msg","Insufficient Balance ...");
+						req.setAttribute("msg", "Insufficient Balance ...");
 					}
 				} else {
-					req.setAttribute("msg","Invalid Receiver Account Number ...");
+					req.setAttribute("msg", "Invalid Receiver Account Number ...");
 				}
 
 			} else {
-				req.setAttribute("msg","Invalid Sender Account Number...");
+				req.setAttribute("msg", "Invalid Sender Account Number...");
 			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return req;
 	}
 }
