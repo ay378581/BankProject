@@ -27,6 +27,7 @@ public class CustomerLoginFilter extends HttpFilter {
 		} else {
 			CustomerBean cb = new CustomerLoginDAO().getAllInformation(accNo);
 			cb.setAccNo(accNo);
+			cb.setPass(pword);
 			req.setAttribute("bean", cb);
 		}
 		chain.doFilter(req, res);

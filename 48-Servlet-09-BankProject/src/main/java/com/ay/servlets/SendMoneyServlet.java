@@ -25,7 +25,9 @@ public class SendMoneyServlet extends HttpServlet {
 				float bal = cb.getBal();
 				bal = bal - Float.parseFloat(req.getParameter("amt"));
 				cb.setBal(bal);
+
 			}
+			req.setAttribute("msg", msg);
 			req.getRequestDispatcher("SendMoney.jsp").include(req, res);
 		}
 
