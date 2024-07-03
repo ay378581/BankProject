@@ -310,7 +310,7 @@
 						More</a>
 				</div>
 				<div class="col-lg-6">
-					<h1 class="text-white mb-3">Register</h1>
+					<h1 class="text-white mb-3">Login Here</h1>
 					<p class="text-white mb-4">
 						Get <span class="text-warning">50% Off</span> On Your First
 						Adventure Trip With Travela. Get More Deal Offers Here.
