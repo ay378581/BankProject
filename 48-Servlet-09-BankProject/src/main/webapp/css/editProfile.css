@@ -1,0 +1,209 @@
+/* editProfile.css */
+
+/* Global Styling */
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(to right, #dde1e7, #f7f8fc);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to the top */
+  height: 100vh;
+  color: #333;
+}
+
+/* Fixed Header Styling */
+.header {
+  width: 100%;
+  background: #4a90e2;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 24px;
+  font-weight: 600;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Container Styling */
+.form-container {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  margin-top: 100px; /* Space for the header */
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 70vh; /* Container height to allow scrolling */
+  animation: fadeIn 0.5s ease-in-out;
+  position: relative;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Label Styling */
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* Input Fields Styling */
+.form-container input[type="text"],
+.form-container input[type="password"],
+.form-container input[type="email"] {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  background-color: #f5f7fa;
+}
+
+.form-container input[type="text"]::placeholder,
+.form-container input[type="password"]::placeholder,
+.form-container input[type="email"]::placeholder {
+  font-weight: bold; /* Make placeholder text bold */
+  color: #999; /* Lighter color for placeholder text */
+}
+
+.form-container input[type="text"]:focus,
+.form-container input[type="password"]:focus,
+.form-container input[type="email"]:focus {
+  border: 1px solid #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.3);
+  outline: none;
+  background-color: #fff;
+}
+
+/* Button Styling */
+.form-container input[type="submit"],
+.form-container input[type="reset"] {
+  width: 48%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #4a90e2;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.form-container input[type="reset"] {
+  background: #d0021b;
+}
+
+.form-container input[type="submit"]:hover,
+.form-container input[type="reset"]:hover {
+  background: #3a7bd5;
+  transform: translateY(-2px);
+}
+
+.form-container .button-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Floating Particles Animation */
+.particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  background: rgba(74, 144, 226, 0.2);
+  border-radius: 50%;
+  animation: float 5s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Particle Size and Position */
+.particle:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  top: 10%;
+  left: 30%;
+}
+.particle:nth-child(2) {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  left: 70%;
+}
+.particle:nth-child(3) {
+  width: 100px;
+  height: 100px;
+  top: 75%;
+  left: 25%;
+}
+.particle:nth-child(4) {
+  width: 60px;
+  height: 60px;
+  top: 30%;
+  left: 55%;
+}
+
+/* Scrollbar Styling */
+.form-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+  background: #4a90e2;
+  border-radius: 8px;
+}
+
+.form-container::-webkit-scrollbar-thumb:hover {
+  background: #3a7bd5;
+}
+
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  right: 20px; 
+  padding: 10px 20px;
+  background-color: #d0021b; 
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  z-index: 1000; 
+}
+
+.back-button:hover {
+  background-color: #9a000d;}
+
