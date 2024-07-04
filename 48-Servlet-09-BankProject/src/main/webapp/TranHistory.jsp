@@ -23,7 +23,6 @@
 	else 
 	{
 	 ArrayList<TransactionBean> transactions	= (ArrayList<TransactionBean>) request.getAttribute("history");	
-	//	SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd"); // Date format
 	%>
 	<div class="container">
 		<header>
@@ -46,7 +45,6 @@
 					<th>Receiver Name</th>
 					<th>Transaction Amount</th>
 					<th>Transaction Date</th>
-					<!-- Added header for transaction date -->
 				</tr>
 			</thead>
 			<tbody>
@@ -54,7 +52,6 @@
 				if (transactions.size() != 0) {
 					for (TransactionBean transaction : transactions) 
 					{
-						// String formattedDate = dateFormatter.format(transaction.getTransactionDate()); // Format the date
 				%>
 				<tr>
 					<td><%=transaction.getId()%></td>
@@ -64,7 +61,6 @@
 					<td><%=transaction.getReceiverName()%></td>
 					<td>$ <%=transaction.getTransactionAmount()%></td>
 					<td><%= transaction.getTransactionDate()%></td>
-					<!-- Display the formatted date -->
 				</tr>
 				<%
 				}
@@ -73,7 +69,6 @@
 				%>
 				<tr>
 					<td colspan="7">No transactions found.</td>
-					<!-- Updated colspan to include new column -->
 				</tr>
 				<%
 				}
