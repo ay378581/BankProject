@@ -1,12 +1,22 @@
 <!DOCTYPE html>
+<%@page import="com.ay.bean.CustomerBean"%>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Edit Profile</title>
-  <link href="css/editProfile.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edit Profile</title>
+<link href="css/editProfile.css" rel="stylesheet">
 </head>
 <body>
+	<%
+	HttpSession hs = request.getSession(false);
+	CustomerBean cb = (CustomerBean) hs.getAttribute("bean");
+	if (cb == null) {
+		request.setAttribute("msg", "Session Expired");
+		request.getRequestDispatcher("SignIn.jsp").include(request, response);
+	} 
+	else 
+	{ %>
   <div class="header">Edit Profile</div>
   <div class="form-container">
     <form action="editProfile" method="post">
@@ -25,6 +35,7 @@
         id="account-number"
         name="accNo"
         placeholder="Enter your account number"
+        value="<%=cb.getAccNo() %>"
         readonly
       />
 
@@ -34,6 +45,7 @@
         id="customer-id"
         name="cid"
         placeholder="Enter your customer ID"
+        value="<%=cb.getCustId() %>"
         readonly
       />
 
@@ -42,14 +54,16 @@
         type="text"
         id="account-type"
         name="actype"
+        value="<%=cb.getAccType() %>"
         placeholder="Enter your account type"
       />
 
-      <label for="balance">Balance:</label>
+     <!--   <label for="balance">Balance:</label>-->
       <input
-        type="text"
+        type="hidden"
         id="balance"
         name="bal"
+        value="<%=cb.getBal() %>"
         placeholder="Enter your current balance"
         readonly
       />
@@ -120,5 +134,7 @@
   </div>
 
   <a href="Welcome.jsp" class="back-button">Go Back</a>
+  
+  <% } %>
 </body>
 </html>

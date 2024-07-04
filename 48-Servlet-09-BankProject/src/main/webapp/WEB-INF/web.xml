@@ -49,6 +49,12 @@
   	<description></description>
   	<servlet-class>com.ay.servlets.TransactionHistoryServlet</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>EditProfileServlet</servlet-name>
+  	<display-name>EditProfileServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.ay.servlets.EditProfileServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>CustomerRegisterServlet</servlet-name>
   	<url-pattern>/cReg</url-pattern>
@@ -64,5 +70,9 @@
   <servlet-mapping>
   	<servlet-name>TransactionHistoryServlet</servlet-name>
   	<url-pattern>/TxHis</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>EditProfileServlet</servlet-name>
+  	<url-pattern>/editProfile</url-pattern>
   </servlet-mapping>
 </web-app>
