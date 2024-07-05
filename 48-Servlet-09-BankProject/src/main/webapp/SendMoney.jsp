@@ -19,6 +19,11 @@
 			request.getRequestDispatcher("SignIn.jsp").include(request, response);
 		} else {
 			out.println("<h2>Welcome: " + cb.getCustName() + "</h2>");
+			
+			String msg = (String) request.getParameter("msg");
+			if (msg != null)
+				out.print(msg);
+			
 		%>
 
 		<form action="sendMoney" method="post">
@@ -39,17 +44,5 @@
 		}
 		%>
 	</div>
-	<center>
-		<script>
-			
-		<%String msg = (String) request.getAttribute("msg");
-if (msg != null) {%>
-			alert(
-		<%=msg%>
-			);
-		<%}%>
-			
-		</script>
-	</center>
 </body>
 </html>

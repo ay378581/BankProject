@@ -14,6 +14,11 @@
 </head>
 <body>
 	<%
+
+	String msg = (String) request.getParameter("msg");
+	if (msg != null)
+		out.print(msg);
+	
 	HttpSession hs = request.getSession(false);
 	CustomerBean cb = (CustomerBean) hs.getAttribute("bean");
 	if (cb == null) {

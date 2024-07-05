@@ -15,9 +15,13 @@ public class CustomerLoginServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
-		HttpSession hs = req.getSession();
 		CustomerBean cb = (CustomerBean) req.getAttribute("bean");
-		hs.setAttribute("bean", cb);
-		req.getRequestDispatcher("Welcome.jsp").include(req, res);
+		if (cb == null) {
+			req.getRequestDispatcher("SignIn.jsp").include(req, res);
+		} else {
+			HttpSession hs = req.getSession();
+			hs.setAttribute("bean", cb);
+			req.getRequestDispatcher("Welcome.jsp").include(req, res);
+		}
 	}
 }

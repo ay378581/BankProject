@@ -29,7 +29,6 @@ public class TransactionHistoryServlet extends HttpServlet {
 
 			if (transactions.size() != 0) {
 				req.setAttribute("history", transactions);
-				System.out.println(transactions);
 				req.getRequestDispatcher("TranHistory.jsp").include(req, res);
 			} 
 			else {

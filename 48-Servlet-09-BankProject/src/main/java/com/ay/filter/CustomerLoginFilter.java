@@ -23,7 +23,8 @@ public class CustomerLoginFilter extends HttpFilter {
 
 		if (accNo == null) {
 			req.setAttribute("msg", "Invalid Username/Password");
-			req.getRequestDispatcher("SignIn.jsp").include(req, res);
+			CustomerBean cb = null;
+			req.setAttribute("bean", cb);
 		} else {
 			CustomerBean cb = new CustomerLoginDAO().getAllInformation(accNo);
 			cb.setAccNo(accNo);

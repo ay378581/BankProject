@@ -9,6 +9,11 @@
 </head>
 <body>
 	<%
+	
+	String msg = (String) request.getAttribute("msg");
+	if (msg != null)
+		out.print(msg);
+	
 	HttpSession hs = request.getSession(false);
 	CustomerBean cb = (CustomerBean) hs.getAttribute("bean");
 	if (cb == null) {
@@ -24,8 +29,8 @@
       <input
         type="text"
         id="customer-name"
+         value="<%=cb.getCustName() %>"
         name="cname"
-        placeholder="Enter your name"
         required
       />
 
@@ -34,7 +39,6 @@
         type="text"
         id="account-number"
         name="accNo"
-        placeholder="Enter your account number"
         value="<%=cb.getAccNo() %>"
         readonly
       />
@@ -44,7 +48,6 @@
         type="text"
         id="customer-id"
         name="cid"
-        placeholder="Enter your customer ID"
         value="<%=cb.getCustId() %>"
         readonly
       />
@@ -55,7 +58,7 @@
         id="account-type"
         name="actype"
         value="<%=cb.getAccType() %>"
-        placeholder="Enter your account type"
+        
       />
 
      <!--   <label for="balance">Balance:</label>-->
@@ -64,7 +67,6 @@
         id="balance"
         name="bal"
         value="<%=cb.getBal() %>"
-        placeholder="Enter your current balance"
         readonly
       />
 
@@ -73,7 +75,8 @@
         type="text"
         id="house-number"
         name="hno"
-        placeholder="Enter your house number"
+        value="<%=cb.gethNo() %>"
+       
       />
 
       <label for="street-number">Street Number:</label>
@@ -81,18 +84,24 @@
         type="text"
         id="street-number"
         name="sn"
-        placeholder="Enter your street number"
+        value="<%=cb.getSname() %>"
+     
       />
 
       <label for="city">City:</label>
-      <input type="text" id="city" name="cty" placeholder="Enter your city" />
+      <input 
+      	type="text" 
+      	id="city" 
+      	name="cty" 
+      	value="<%=cb.getCty() %>"
+      	 />
 
       <label for="state">State:</label>
       <input
         type="text"
         id="state"
         name="st"
-        placeholder="Enter your state"
+       value="<%=cb.getState() %>"
       />
 
       <label for="pincode">Pincode:</label>
@@ -100,7 +109,7 @@
         type="text"
         id="pincode"
         name="pin"
-        placeholder="Enter your pincode"
+        value="<%=cb.getPin() %>"
       />
 
       <label for="mail-id">Mail Id:</label>
@@ -108,7 +117,7 @@
         type="email"
         id="mail-id"
         name="mid"
-        placeholder="Enter your email address"
+        value="<%=cb.getMid() %>"
       />
 
       <label for="phone-number">Phone No:</label>
@@ -116,7 +125,7 @@
         type="text"
         id="phone-number"
         name="phone"
-        placeholder="Enter your phone number"
+        value="<%=cb.getPhone() %>"
       />
 
       <div class="button-group">

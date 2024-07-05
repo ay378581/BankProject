@@ -35,6 +35,28 @@ public class CustomerLoginDAO {
 
 		return accNo;
 	}
+	
+	public Long checkUser(String uname) {
+
+		Long accNo = null;
+
+		try {
+			Connection con = DBConnection.getConnection();
+			PreparedStatement ps = con.prepareStatement("SELECT * FROM CUSTAUTH WHERE username = ?");
+			ps.setString(1, uname);
+			
+			ResultSet rs = ps.executeQuery();
+			if (rs.next())
+				accNo = rs.getLong(1);
+				
+			System.out.println(accNo);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return accNo;
+	}
 
 	public CustomerBean getAllInformation(Long accNo) {
 		CustomerBean cb = null;

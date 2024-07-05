@@ -65,6 +65,11 @@
     </style>
 </head>
 <body>
+	<%
+	String msg = (String) request.getParameter("msg");
+	if (msg != null)
+		out.print(msg);
+	%>
     <div class="form-container">
         <h2>Registration Form</h2>
          <form action="cReg" method="post">

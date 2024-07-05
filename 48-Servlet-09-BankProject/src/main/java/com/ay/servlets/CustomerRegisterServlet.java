@@ -18,21 +18,23 @@ public class CustomerRegisterServlet extends HttpServlet {
 
 		CustomerBean cb = (CustomerBean) req.getAttribute("bean");
 
-		System.out.println("Servlet");
+		if (cb != null) {
+			int k = new CustomerRegisterDAO().register(cb);
+			if (k > 0) {
 
-		int k = new CustomerRegisterDAO().register(cb);
-		if (k > 0) {
-			
-			int q = new Mail().sendMail(cb);
-			if(q > 0)
-				req.setAttribute("msg", "Register Successfully and mail Sent to your Registered Mail Id");
-			
-			req.setAttribute("msg", "Register Successfully");
-			req.getRequestDispatcher("SignIn.jsp").include(req, res);
+				int q = new Mail().sendMail(cb);
+				if (q > 0)
+					req.setAttribute("msg", "Register Successfully and mail Sent to your Registered Mail Id");
+
+				req.setAttribute("msg", "Register Successfully");
+				req.getRequestDispatcher("SignIn.jsp").include(req, res);
+			} else {
+
+				req.setAttribute("msg", "Failed To Register");
+				req.getRequestDispatcher("index.jsp").include(req, res);
+			}
 		} else {
-
-			req.setAttribute("msg", "Failed To Register");
-			req.getRequestDispatcher("index.jsp").include(req, res);
+			req.getRequestDispatcher("SignIn.jsp").include(req, res);
 		}
 	}
 
